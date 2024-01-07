@@ -64,14 +64,15 @@ void setup() {
 }
 
 void loop() {
-  getAnalogData(); //call func for reading analog pins
-  getDigitalData(); //call func for reading digital pins
+  readAnalogInps(); //call func for reading analog pins
+  readDigitalInps(); //call func for reading digital pins
   //ignore incoming midi
-  while (usbMIDI.read()) {}
+  while (usbMIDI.read()) { 
+  }
 }
 
 //read analog inputs
-void getAnalogData(){  
+void readAnalogInps(){  
   for (int i=0;i<num_analog;i++){
     analog[i].update(); // update each pin 
 	
@@ -87,7 +88,7 @@ void getAnalogData(){
 }
 
 //read digital inputs
-void getDigitalData(){
+void readDigitalInps(){
   for (int i=0;i<num_digital;i++){
 	digital[i].update();
   
